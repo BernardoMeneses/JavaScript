@@ -1,0 +1,11 @@
+Symposium: 2022
+[Analgesico,Antibiotico,Brufen]
+[
+/- Medicamento 1 -/
+(Moment,1,Analgesico,Paracetamol,4.5,{Roche},{Qualquer-Bial});
+/- Medicamento 2 -/
+(Antigripine,2,Antibiotico,Acetalilico,6.,{Fabt,Faba,Fabb},{Aga-Fabc,Agb-Fabh});
+/- Medicamento 3 -/
+(Brufen,3,Analgesico,Ibuprofeno,400,{Mylan},{Qualquer-detestoCompiladores});
+/- Medicamento 4 -/
+(Spidifen,20,Analgesico,Ibuprofeno,400,{Zambom},{Qualquer-duyy});

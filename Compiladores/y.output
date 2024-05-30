@@ -1,0 +1,555 @@
+Nonterminals useless in grammar
+
+    Classes
+    Repetable
+
+
+Terminals unused in grammar
+
+    DOT
+
+
+Rules useless in grammar
+
+   21 Classes: ID
+   22        | Classes COMMA ID
+
+   23 Repetable: ID
+
+
+Grammar
+
+    0 $accept: Document $end
+
+    1 Document: Header Body
+
+    2 Header: SYMP COLON INT
+
+    3 Body: ClassHeader ClassBody
+
+    4 IdList: ID
+    5       | IdList COMMA ID
+
+    6 ClassHeader: OPEN_SQUARE_BRACKET IdList CLOSE_SQUARE_BRACKET
+
+    7 MedList: Med
+    8        | MedList Med
+
+    9 ClassBody: OPEN_SQUARE_BRACKET MedList CLOSE_SQUARE_BRACKET
+
+   10 Med: OPEN_PARENTHESIS Name COMMA Code COMMA Category COMMA ChemComp COMMA Price COMMA Repetables COMMA Equals CLOSE_PARENTHESIS
+
+   11 Name: ID
+
+   12 Category: ID
+
+   13 Code: INT
+
+   14 ChemComp: ID
+
+   15 Price: REAL
+
+   16 Repetables: OPEN_CURLY_BRACKET IdList CLOSE_CURLY_BRACKET
+
+   17 EqualList: Equal
+   18          | EqualList COMMA Equal
+
+   19 Equals: OPEN_CURLY_BRACKET EqualList CLOSE_CURLY_BRACKET
+
+   20 Equal: Name BRANCOS Repetables
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    COLON (258) 2
+    DOT (259)
+    OPEN_SQUARE_BRACKET (260) 6 9
+    CLOSE_SQUARE_BRACKET (261) 6 9
+    OPEN_CURLY_BRACKET (262) 16 19
+    CLOSE_CURLY_BRACKET (263) 16 19
+    OPEN_PARENTHESIS (264) 10
+    CLOSE_PARENTHESIS (265) 10
+    COMMA (266) 5 10 18
+    BRANCOS (267) 20
+    SYMP <string> (268) 2
+    ID <string> (269) 4 5 11 12 14
+    INT <num> (270) 2 13
+    REAL <rnum> (271) 15
+
+
+Nonterminals, with rules where they appear
+
+    $accept (17)
+        on left: 0
+    Document (18)
+        on left: 1
+        on right: 0
+    Header (19)
+        on left: 2
+        on right: 1
+    Body (20)
+        on left: 3
+        on right: 1
+    IdList <string> (21)
+        on left: 4 5
+        on right: 5 6 16
+    ClassHeader (22)
+        on left: 6
+        on right: 3
+    MedList <string> (23)
+        on left: 7 8
+        on right: 8 9
+    ClassBody (24)
+        on left: 9
+        on right: 3
+    Med <string> (25)
+        on left: 10
+        on right: 7 8
+    Name <string> (26)
+        on left: 11
+        on right: 10 20
+    Category <string> (27)
+        on left: 12
+        on right: 10
+    Code <string> (28)
+        on left: 13
+        on right: 10
+    ChemComp <string> (29)
+        on left: 14
+        on right: 10
+    Price <string> (30)
+        on left: 15
+        on right: 10
+    Repetables <string> (31)
+        on left: 16
+        on right: 10 20
+    EqualList <string> (32)
+        on left: 17 18
+        on right: 18 19
+    Equals <string> (33)
+        on left: 19
+        on right: 10
+    Equal <string> (34)
+        on left: 20
+        on right: 17 18
+
+
+State 0
+
+    0 $accept: . Document $end
+
+    SYMP  shift, and go to state 1
+
+    Document  go to state 2
+    Header    go to state 3
+
+
+State 1
+
+    2 Header: SYMP . COLON INT
+
+    COLON  shift, and go to state 4
+
+
+State 2
+
+    0 $accept: Document . $end
+
+    $end  shift, and go to state 5
+
+
+State 3
+
+    1 Document: Header . Body
+
+    OPEN_SQUARE_BRACKET  shift, and go to state 6
+
+    Body         go to state 7
+    ClassHeader  go to state 8
+
+
+State 4
+
+    2 Header: SYMP COLON . INT
+
+    INT  shift, and go to state 9
+
+
+State 5
+
+    0 $accept: Document $end .
+
+    $default  accept
+
+
+State 6
+
+    6 ClassHeader: OPEN_SQUARE_BRACKET . IdList CLOSE_SQUARE_BRACKET
+
+    ID  shift, and go to state 10
+
+    IdList  go to state 11
+
+
+State 7
+
+    1 Document: Header Body .
+
+    $default  reduce using rule 1 (Document)
+
+
+State 8
+
+    3 Body: ClassHeader . ClassBody
+
+    OPEN_SQUARE_BRACKET  shift, and go to state 12
+
+    ClassBody  go to state 13
+
+
+State 9
+
+    2 Header: SYMP COLON INT .
+
+    $default  reduce using rule 2 (Header)
+
+
+State 10
+
+    4 IdList: ID .
+
+    $default  reduce using rule 4 (IdList)
+
+
+State 11
+
+    5 IdList: IdList . COMMA ID
+    6 ClassHeader: OPEN_SQUARE_BRACKET IdList . CLOSE_SQUARE_BRACKET
+
+    CLOSE_SQUARE_BRACKET  shift, and go to state 14
+    COMMA                 shift, and go to state 15
+
+
+State 12
+
+    9 ClassBody: OPEN_SQUARE_BRACKET . MedList CLOSE_SQUARE_BRACKET
+
+    OPEN_PARENTHESIS  shift, and go to state 16
+
+    MedList  go to state 17
+    Med      go to state 18
+
+
+State 13
+
+    3 Body: ClassHeader ClassBody .
+
+    $default  reduce using rule 3 (Body)
+
+
+State 14
+
+    6 ClassHeader: OPEN_SQUARE_BRACKET IdList CLOSE_SQUARE_BRACKET .
+
+    $default  reduce using rule 6 (ClassHeader)
+
+
+State 15
+
+    5 IdList: IdList COMMA . ID
+
+    ID  shift, and go to state 19
+
+
+State 16
+
+   10 Med: OPEN_PARENTHESIS . Name COMMA Code COMMA Category COMMA ChemComp COMMA Price COMMA Repetables COMMA Equals CLOSE_PARENTHESIS
+
+    ID  shift, and go to state 20
+
+    Name  go to state 21
+
+
+State 17
+
+    8 MedList: MedList . Med
+    9 ClassBody: OPEN_SQUARE_BRACKET MedList . CLOSE_SQUARE_BRACKET
+
+    CLOSE_SQUARE_BRACKET  shift, and go to state 22
+    OPEN_PARENTHESIS      shift, and go to state 16
+
+    Med  go to state 23
+
+
+State 18
+
+    7 MedList: Med .
+
+    $default  reduce using rule 7 (MedList)
+
+
+State 19
+
+    5 IdList: IdList COMMA ID .
+
+    $default  reduce using rule 5 (IdList)
+
+
+State 20
+
+   11 Name: ID .
+
+    $default  reduce using rule 11 (Name)
+
+
+State 21
+
+   10 Med: OPEN_PARENTHESIS Name . COMMA Code COMMA Category COMMA ChemComp COMMA Price COMMA Repetables COMMA Equals CLOSE_PARENTHESIS
+
+    COMMA  shift, and go to state 24
+
+
+State 22
+
+    9 ClassBody: OPEN_SQUARE_BRACKET MedList CLOSE_SQUARE_BRACKET .
+
+    $default  reduce using rule 9 (ClassBody)
+
+
+State 23
+
+    8 MedList: MedList Med .
+
+    $default  reduce using rule 8 (MedList)
+
+
+State 24
+
+   10 Med: OPEN_PARENTHESIS Name COMMA . Code COMMA Category COMMA ChemComp COMMA Price COMMA Repetables COMMA Equals CLOSE_PARENTHESIS
+
+    INT  shift, and go to state 25
+
+    Code  go to state 26
+
+
+State 25
+
+   13 Code: INT .
+
+    $default  reduce using rule 13 (Code)
+
+
+State 26
+
+   10 Med: OPEN_PARENTHESIS Name COMMA Code . COMMA Category COMMA ChemComp COMMA Price COMMA Repetables COMMA Equals CLOSE_PARENTHESIS
+
+    COMMA  shift, and go to state 27
+
+
+State 27
+
+   10 Med: OPEN_PARENTHESIS Name COMMA Code COMMA . Category COMMA ChemComp COMMA Price COMMA Repetables COMMA Equals CLOSE_PARENTHESIS
+
+    ID  shift, and go to state 28
+
+    Category  go to state 29
+
+
+State 28
+
+   12 Category: ID .
+
+    $default  reduce using rule 12 (Category)
+
+
+State 29
+
+   10 Med: OPEN_PARENTHESIS Name COMMA Code COMMA Category . COMMA ChemComp COMMA Price COMMA Repetables COMMA Equals CLOSE_PARENTHESIS
+
+    COMMA  shift, and go to state 30
+
+
+State 30
+
+   10 Med: OPEN_PARENTHESIS Name COMMA Code COMMA Category COMMA . ChemComp COMMA Price COMMA Repetables COMMA Equals CLOSE_PARENTHESIS
+
+    ID  shift, and go to state 31
+
+    ChemComp  go to state 32
+
+
+State 31
+
+   14 ChemComp: ID .
+
+    $default  reduce using rule 14 (ChemComp)
+
+
+State 32
+
+   10 Med: OPEN_PARENTHESIS Name COMMA Code COMMA Category COMMA ChemComp . COMMA Price COMMA Repetables COMMA Equals CLOSE_PARENTHESIS
+
+    COMMA  shift, and go to state 33
+
+
+State 33
+
+   10 Med: OPEN_PARENTHESIS Name COMMA Code COMMA Category COMMA ChemComp COMMA . Price COMMA Repetables COMMA Equals CLOSE_PARENTHESIS
+
+    REAL  shift, and go to state 34
+
+    Price  go to state 35
+
+
+State 34
+
+   15 Price: REAL .
+
+    $default  reduce using rule 15 (Price)
+
+
+State 35
+
+   10 Med: OPEN_PARENTHESIS Name COMMA Code COMMA Category COMMA ChemComp COMMA Price . COMMA Repetables COMMA Equals CLOSE_PARENTHESIS
+
+    COMMA  shift, and go to state 36
+
+
+State 36
+
+   10 Med: OPEN_PARENTHESIS Name COMMA Code COMMA Category COMMA ChemComp COMMA Price COMMA . Repetables COMMA Equals CLOSE_PARENTHESIS
+
+    OPEN_CURLY_BRACKET  shift, and go to state 37
+
+    Repetables  go to state 38
+
+
+State 37
+
+   16 Repetables: OPEN_CURLY_BRACKET . IdList CLOSE_CURLY_BRACKET
+
+    ID  shift, and go to state 10
+
+    IdList  go to state 39
+
+
+State 38
+
+   10 Med: OPEN_PARENTHESIS Name COMMA Code COMMA Category COMMA ChemComp COMMA Price COMMA Repetables . COMMA Equals CLOSE_PARENTHESIS
+
+    COMMA  shift, and go to state 40
+
+
+State 39
+
+    5 IdList: IdList . COMMA ID
+   16 Repetables: OPEN_CURLY_BRACKET IdList . CLOSE_CURLY_BRACKET
+
+    CLOSE_CURLY_BRACKET  shift, and go to state 41
+    COMMA                shift, and go to state 15
+
+
+State 40
+
+   10 Med: OPEN_PARENTHESIS Name COMMA Code COMMA Category COMMA ChemComp COMMA Price COMMA Repetables COMMA . Equals CLOSE_PARENTHESIS
+
+    OPEN_CURLY_BRACKET  shift, and go to state 42
+
+    Equals  go to state 43
+
+
+State 41
+
+   16 Repetables: OPEN_CURLY_BRACKET IdList CLOSE_CURLY_BRACKET .
+
+    $default  reduce using rule 16 (Repetables)
+
+
+State 42
+
+   19 Equals: OPEN_CURLY_BRACKET . EqualList CLOSE_CURLY_BRACKET
+
+    ID  shift, and go to state 20
+
+    Name       go to state 44
+    EqualList  go to state 45
+    Equal      go to state 46
+
+
+State 43
+
+   10 Med: OPEN_PARENTHESIS Name COMMA Code COMMA Category COMMA ChemComp COMMA Price COMMA Repetables COMMA Equals . CLOSE_PARENTHESIS
+
+    CLOSE_PARENTHESIS  shift, and go to state 47
+
+
+State 44
+
+   20 Equal: Name . BRANCOS Repetables
+
+    BRANCOS  shift, and go to state 48
+
+
+State 45
+
+   18 EqualList: EqualList . COMMA Equal
+   19 Equals: OPEN_CURLY_BRACKET EqualList . CLOSE_CURLY_BRACKET
+
+    CLOSE_CURLY_BRACKET  shift, and go to state 49
+    COMMA                shift, and go to state 50
+
+
+State 46
+
+   17 EqualList: Equal .
+
+    $default  reduce using rule 17 (EqualList)
+
+
+State 47
+
+   10 Med: OPEN_PARENTHESIS Name COMMA Code COMMA Category COMMA ChemComp COMMA Price COMMA Repetables COMMA Equals CLOSE_PARENTHESIS .
+
+    $default  reduce using rule 10 (Med)
+
+
+State 48
+
+   20 Equal: Name BRANCOS . Repetables
+
+    OPEN_CURLY_BRACKET  shift, and go to state 37
+
+    Repetables  go to state 51
+
+
+State 49
+
+   19 Equals: OPEN_CURLY_BRACKET EqualList CLOSE_CURLY_BRACKET .
+
+    $default  reduce using rule 19 (Equals)
+
+
+State 50
+
+   18 EqualList: EqualList COMMA . Equal
+
+    ID  shift, and go to state 20
+
+    Name   go to state 44
+    Equal  go to state 52
+
+
+State 51
+
+   20 Equal: Name BRANCOS Repetables .
+
+    $default  reduce using rule 20 (Equal)
+
+
+State 52
+
+   18 EqualList: EqualList COMMA Equal .
+
+    $default  reduce using rule 18 (EqualList)

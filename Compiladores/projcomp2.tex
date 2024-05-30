@@ -1,0 +1,210 @@
+\documentclass{report}
+\usepackage[portuges]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{url}
+\usepackage{alltt}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{algorithmic}
+\usepackage[lined,algonl,boxed]{algorithm2e}
+
+\parindent=0pt
+\parskip=2pt
+
+    
+    
+    
+
+\title{\textbf{Compiladores}\\Universidade de Trás-os-Montes e Alto Douro\\2º Ano Eng.Informática \linebreak 
+\linebreak
+\textbf{Anuário de Medicamentos}\linebreak
+Relatório de Desenvolvimento}
+
+\author{Bernardo Meneses 74116 \and Andreia Queirós 73997 \and Adriana Paiva 73489 \and Tiago Fernandes 73701}
+
+\date{22 de Janeiro 2021}
+ 
+
+\begin{document}
+
+\maketitle
+
+
+   
+   \large
+   
+    \begin{center}
+        \textbf{Resumo}
+    \end{center}
+   
+   No âmbito da disciplina 'Compiladores' leccionada pela professora Teresa Perdicoúlis , foi-nos solicitado que implementássemos um sistema de consulta desses medicamentos , que seja acessivel a qualquer farmácia através de um browser HTML.
+
+A finalidade deste projeto é desenvolver ...
+
+Torna-se crucial a leitura deste trabalho uma vez que nos dá noções sobre uma aplicação complexa , sem privilegios especiais , que traduz uma descrição numa linguagem fonte numa descrição equivalente numa liguagem destino : um compliador.
+ A fim de compreender melhor o funcionamento de um processador de linguagens foi-nos proposta a implementação de um reconhecedor léxicoe de um reconhecedor sintático usando a linguagem C.
+ De forma a conhecer melhor as ferramentas auxiliares para o desenvolvimento automático dos processadores de linguagens foi nos sugerida a utilização do Lex e do Yacc , de modo a gerar a partir destes um reconhecedor léxico e sintático, respetivamente.
+
+
+
+\large 
+
+
+
+\tableofcontents
+
+\chapter{Introdução}
+ No âmbito da unidade curricular 'Compiladores' orientada pela professora Teresa Perdicoúlis foi-nos proposto implementar um sistema de consulta de medicamentos , que seja acessivel a qualquer farmacia atraves de um browser HTML.
+ 
+ Neste trabalho iremos começar por desenvolver um analisador léxico (AL) usando a linguagem Lex para este devolver a informação envolvida no lote de medicamentos a considerar.
+ 
+ De seguida iremos desenvolver um analisador sintático(AS), isto lê a informação devolvida pelo AL e verifica se a informação em causa respeita as regras da gramática utilizada.
+ 
+ Também incluimos um analisador semântico (ASem), este descodifica o significado da frase, e, então, valida se a informação em causa cumpre as condições em causa q a torne semanticamente válida.
+ 
+Estes dois últimos (AS,ASem), irão ser desenvolvidos em Yacc
+ 
+ 
+\chapter{Análise e Especificação}
+\section{Descrição informal do problema}
+Este projeto tem a finalidade da implementação para auxiliar o Instituto Farmacêutico do Ministério de Saude na gestão de medicamentos , podendo ser consultados e que qualquer farmácia tenha acesso atarvés de um browser. 
+\section{Especificação do Requisitos}
+\subsection{Dados}
+Para a realização deste trabalho usamos a aplicação ... com extensões a liguagem C , Yacc e Lex. Fizemos um relatório em Latex usando o Overleaf. Ao longo das aulas fomos aprendendo e apontando material de apoio para a execução deste projeto .Também usamos o relatório fornecido pela docente para orientar o desempenho desta atividade
+\subsection{Pedidos}
+A finalidade deste trabalho é definir uma linguagem para descrever a infromação envolvida no lote de medicamentos a considerar e desenvolver um AL usando o Lex para reconhecer todos os símbolos terminais dessa linguagem e devolver os respetivos códigos. Já a Analise Sintatica e semãntica desenvolvido, em Yacc, vai receber os símbolos do AL e verificar a sequencia em causa se respeita a derivação,ou produçoes da gramtica, bem como validar se uos simbolos estao semanticamente corretos , fazendo tambem um tradutor , a partir da gramatica tradutora da linguagem a processar. 
+\subsection{Relações}
+Para a implementação dos analisadores utliziamos..... com extensoes da Linguagem C  , Yacc e Lex para servir de analisador sintatico e léxico.
+Como editor do texto para o desenvolvimento do trabalho recorremos ao Latex. Auxiliamo-nos tanto aos apontamentos das aulas como o respetivo protocolo .
+
+
+\chapter{Concepção/desenho da Resolução}
+\section{Estruturas e Dados e Algoritmos}
+
+Neste trabalho começamos a implementação do ficheiro lex, uma vez que para nós é a
+matéria de mais fácil compreensão, onde desenvolvemos os tokens que achamos necessários
+para a implementação do código  
+Na etapa seguinte, desenvolvemos o ficheiro yacc que se revelou mais complicado
+e quase um quebra-cabeças, uma vez que não percebiamos muito bem da matéria.
+Deparados com este situação, decidimos falar com outros grupos com os quais trocámos ideias e, 
+recebemos sugestões cruciais para o desenvolvimento desta parte do trabalho. Com isto, começamos por definir os tokens que iam ser usados no lex e os types, 
+neste caso, alguns grupos que definimos para fazer a análise sintática.
+Também definimos uma estrutura e dentro dessa estrutura fizemos uma divisão onde 
+acabamos com alguns types como Med que neste caso faz a análise da frase sobre o 
+medicamento em sí que contem types como o nome, a empresa, o preço,… Após fazer isto construímos o Equals e Repetables para este fazer no Med
+a comparação com os dados existentes numa struct criada para guardar os 
+dados dos medicamentos, onde este quando repete um medicamento irá apresentar no medicamento.
+No final verificamos os erros do programa e construímos uma função print
+para colocar no ficheiro de saída os dados pretendidos pelo utilizador. 
+Não conseguimos colocar o acesso ao website em html.
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.5\textwidth]{1.png}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.5\textwidth]{2.png}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.5\textwidth]{3.png}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.5\textwidth]{4.png}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.5\textwidth]{5.png}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=2\textwidth]{6.png}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.5\textwidth]{7.png}
+\end{figure}
+
+\chapter{Codificação e Testes}
+\section{Alternativas, Decisões e Problemas de Implementação}
+No final fazendo a compilação do projeto não conseguimos implementar 
+o mesmo pois dá nos dois erros no ficheiro c do lex devido a passagens 
+de informações entre lex e yacc.
+
+Estes erros no ficheiro c do yacc acontecem muitas das vezes
+devido à confusão de variáveis dentro do projeto, 
+uma vez que estão colocadas em sítios errados ou então uma variável chamada 
+nTrabalho estar no lugar de uma n trabalho.
+
+Estes erros no ficheiro c do yacc podem ter surgido devido 
+ao facto de já existir “warnings” na compilação do yacc.
+
+Apesar de tudo também fizemos um exemplo de entrada de medicamentos, mas 
+como é obvio não foi possível utilizar. Pensámos também que o facto de existirem 
+estes erros derivam bastante de nós termos deixado muito para última a realização 
+do trabalho apesar de que a parte que nos revelou mais trabalhosa e com mais erros 
+ter sido lecionada apenas ainda neste mês.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.3\textwidth]{tiago.png}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.5\textwidth]{tiago 2.png}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{med.png}
+\end{figure}
+
+\section{Testes realizados e Resultados}
+Como foi referido anteriormente, devido aos erros de implementação não foi possivel compilar os ficheiros.Sendo assim, não conseguimos obter os resultados.
+
+
+
+\chapter{Conclusão}
+Neste projeto começamos por analisar o problema a que fomos propostos e após
+uma breve reflexão, dividimos e percebemos os objetivos. Desenvolvemos 
+dois codigos importantes que nos permitiram adquirir um pouco mais de conhecimento acerca do lex e do yacc.
+. Podemos concluir que o projeto foi de certo modo importante para esta Unidade Curricular.
+
+
+\appendix
+
+\chapter{Equipa}
+
+Esta equipa é composta pelos elementos Adriana Paiva, Andreia Queirós, Bernardo Meneses e Tiago Fernandes. 
+
+Este trabalho foi feito através da plataforma Discord. De forma a homogeneizar o trabalho e de maneira a todos os elementos entenderem o mesmo da matéria presente no trabalho, em grupo, foi decidido que todas as etapas seriam feitas por todos com partilha de ideias.
+
+
+
+\newpage
+
+
+
+
+
+
+\end{document}
