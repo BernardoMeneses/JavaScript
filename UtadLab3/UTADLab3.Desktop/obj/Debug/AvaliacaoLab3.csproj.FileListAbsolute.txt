@@ -1,0 +1,48 @@
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\bin\Debug\Avaliacao1Lab3.exe.config
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\bin\Debug\Avaliacao1Lab3.exe
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\bin\Debug\Avaliacao1Lab3.pdb
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\AvaliacaoLab3.csproj.AssemblyReference.cache
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\AvaliacaoLab3.csproj.SuggestedBindingRedirects.cache
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3_MarkupCompile.cache
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3_MarkupCompile.lref
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.g.resources
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.Properties.Resources.resources
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\AvaliacaoLab3.csproj.GenerateResource.cache
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\AvaliacaoLab3.csproj.CoreCompileInputs.cache
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.exe
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.pdb
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Ecrã de Login\LoginScreen.g.cs
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Ecrã de registo\RegisterScreen.g.cs
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\App\App.g.cs
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Ecrã de Login\LoginScreen.baml
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Ecrã de registo\RegisterScreen.baml
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\MainWindow.g.cs
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\MainWindow.baml
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\bin\Debug\Avaliacao1Lab3.exe.config
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\bin\Debug\Avaliacao1Lab3.exe
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\bin\Debug\Avaliacao1Lab3.pdb
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\AvaliacaoLab3.csproj.AssemblyReference.cache
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\AvaliacaoLab3.csproj.SuggestedBindingRedirects.cache
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Aplicacção\Menu Principal\MainApp.g.cs
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Ecrã de Login\LoginScreen.g.cs
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\MainWindow.g.cs
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Ecrã de registo\RegisterScreen.g.cs
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\ProfileEditor\ProfileEditorScreen.g.cs
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\App\App.g.cs
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3_MarkupCompile.cache
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3_MarkupCompile.lref
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Aplicacção\Menu Principal\MainApp.baml
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Ecrã de Login\LoginScreen.baml
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\MainWindow.baml
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Ecrã de registo\RegisterScreen.baml
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\ProfileEditor\ProfileEditorScreen.baml
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.g.resources
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.Properties.Resources.resources
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\AvaliacaoLab3.csproj.GenerateResource.cache
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\AvaliacaoLab3.csproj.CoreCompileInputs.cache
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.exe
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.pdb
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Aplicacção\InsideList\InsideList.g.cs
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Aplicacção\InsideList\InsideList.baml
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\ProfileEditor\SettingsScreen\SettingsScreen.g.cs
+C:\Users\berna\OneDrive\Ambiente de Trabalho\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\ProfileEditor\SettingsScreen\SettingsScreen.baml

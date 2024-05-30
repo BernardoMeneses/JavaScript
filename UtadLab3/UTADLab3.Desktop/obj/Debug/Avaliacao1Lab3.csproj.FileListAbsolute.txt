@@ -1,0 +1,15 @@
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\bin\Debug\Avaliacao1Lab3.exe.config
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\bin\Debug\Avaliacao1Lab3.exe
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\bin\Debug\Avaliacao1Lab3.pdb
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.csprojAssemblyReference.cache
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\MainWindow.g.cs
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\App.g.cs
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3_MarkupCompile.cache
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3_MarkupCompile.lref
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\MainWindow.baml
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.g.resources
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.Properties.Resources.resources
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.csproj.GenerateResource.cache
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.csproj.CoreCompileInputs.cache
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.exe
+C:\Users\W10\Desktop\Universidade\2ºAno\2 semestre\lab3\ProjetoAvContinua\Avaliacao1Lab3\Avaliacao1Lab3\obj\Debug\Avaliacao1Lab3.pdb

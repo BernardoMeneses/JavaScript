@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "W006PPxYAbyoRZSSvSX7cNKr8dI9vAddJaPmnqucJzuxhE4C+Pcp6VNXlyGArUp9NFztvW7xjjmqCZqAUHJHOA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\W10\\Source\\Repos\\NewRepo\\UtadLab3.Mobile\\UtadLab3.Mobile\\UtadLab3.Mobile.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\W10\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\W10\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\W10\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\W10\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\W10\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
