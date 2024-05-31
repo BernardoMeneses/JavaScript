@@ -4,16 +4,31 @@ import { setupLightKeybinds, setupMovementKeybinds, setupMenuKeybinds } from './
 import TWEEN from 'https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@18.6.4/dist/tween.esm.js';
 import confetti from 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.module.mjs';
 import { createSofa } from './Objetos/sofa.js'
-import {addQuadrosToWall} from './Objetos/quadros.js'
+import { createQuadroGroup, addQuadroGroupToWall } from './Objetos/quadros.js';
+import { createPorta, rotatePortaY } from './Objetos/porta.js';
+import { createPlanta } from './Objetos/planta.js';
+
+import { createTV } from './Objetos/tv.js';
 
 
 const scene = new THREE.Scene();
 
+
 // Adicionando o sofá à cena
 const sofa = createSofa();
-sofa.position.set(1, -6.5, -47); // Ajuste a posição conforme necessário
+sofa.position.set(1, -5.5, -45); // Ajuste a posição conforme necessário
 scene.add(sofa);
 
+const sofa1 = createSofa();
+sofa1.position.set(16,-5.5, -45 );
+scene.add(sofa1);
+
+const porta = createPorta({ x: 50, y: 0, z: 40 }, './Skybox/mesa.png');
+scene.add(porta);
+
+// Adicionando planta à cena ao lado da porta
+const planta = createPlanta({ x: 45, y: -5, z: 0 }, './Skybox/vaso.jpg', './Skybox/planta.jpg');
+scene.add(planta);
 
 const aspect = window.innerWidth / window.innerHeight;
 const frustumSize = 20;
@@ -87,28 +102,58 @@ rightWall.position.y = roomHeight / 2 - 6.5;
 rightWall.rotation.y = -Math.PI / 2; 
 scene.add(rightWall);
 
+// Adicionando TV na frontwall no centro mesmo debaixo dos quadros já la existentes
+const tv = createTV({ x: 0, y: -10, z: 0 }, './Skybox/tv.jpg');
+frontWall.add(tv);
+
 const imageUrls = [
     './Imagens/meme1.jpg',
     './Imagens/meme2.jpg',
     './Imagens/meme3.jpg',
     './Imagens/meme4.png',
     './Imagens/meme5.png',
-    './Imagens/meme6.gif',
+    './Imagens/miameme.png',
+    './Imagens/meme8.jpg',
+    './Imagens/cavalomeme.jpg',
+    // Adicione mais URLs conforme necessário
+];
+
+const imageUrls2 = [
+    './Imagens/meme7.png',
+    './Imagens/200.gif',
+    './Imagens/yomi-yuumi.png',
+    './Imagens/huh-cat-huh-m4rtin.gif',
+    
     // Adicione mais URLs conforme necessário
 ];
 
 // Ajuste as posições dos quadros para que fiquem diretamente acima do sofá
 const quadroPositions = [
-    { x: 15, y: 10 },
-    { x: 0, y: 10 },
-    { x: -15, y: 10 },
-    {x: -30, y: 10},
-    {x:-15, y: -5},
-    {x: 15, y: -5}
+    { x: 15, y: 10, z: 0 },
+    { x: 0, y: 10, z: 0 },
+    { x: -15, y: 10, z: 0 },
+    { x: -30, y: 10, z: 0 },
+    { x: -15, y: -5, z: 0 },
+    { x: 15, y: -5, z: 0 },
+    { x: 0, y: -5, z: 0 },
+    { x: -30, y:-5, z:0 },
+
 ];
 
-addQuadrosToWall(backWall, imageUrls, quadroPositions);
+const quadroPositions2 = [
+    { x: 15, y: 10, z: 0 },
+    { x: 0, y: 10, z: 0 },
+    { x: -15, y: 10, z: 0 },
+    { x: -30, y: 10, z: 0 },
+    
+    // Adicione mais posições conforme necessário
+];
 
+const quadroGroup1 = createQuadroGroup(imageUrls, quadroPositions, Math.PI);
+const quadroGroup2 = createQuadroGroup(imageUrls2, quadroPositions2, 2 * Math.PI);
+
+addQuadroGroupToWall(backWall, quadroGroup1);
+addQuadroGroupToWall(frontWall, quadroGroup2);
 
 // Definindo duas câmeras: uma para visualização dinâmica inicial e uma estática
 const dynamicCamera = new THREE.PerspectiveCamera(45, aspect, 0.1, 1000);
@@ -167,7 +212,9 @@ spotLight2.castShadow = true;
 spotLight2.visible = false;  // Initialize as turned off
 scene.add(spotLight2);
 
-const boardMaterial = new THREE.MeshPhongMaterial({ color: 0x123456 });
+const BoardTexture = textureLoader.load('./SkyBox/tabuleiro.avif')
+
+const boardMaterial = new THREE.MeshPhongMaterial({map: BoardTexture });
 const sideBoardGeometry = new THREE.BoxGeometry(0.25, 7, 0.75);
 const leftSideBoard = new THREE.Mesh(sideBoardGeometry, boardMaterial);
 leftSideBoard.position.set(-3.87, 0.75, 0);
@@ -194,12 +241,16 @@ for (let i = -3; i <= 3; i++) {
     }
 }
 
-const platformMaterial = new THREE.MeshPhongMaterial({ color: 0x777777 });
+const plataformTexture = textureLoader.load('./Skybox/plataform.jpg');
+
+const platformMaterial = new THREE.MeshPhongMaterial({ map: plataformTexture });
 const platform = new THREE.Mesh(new THREE.BoxGeometry(10, 0.5, 14), platformMaterial);
 platform.position.set(0, -3, 0);
 scene.add(platform);
 
-const tableMaterial = new THREE.MeshPhongMaterial({ color: 0x8B4513 });
+const tableTexture = textureLoader.load('./Skybox/mesa.png');
+
+const tableMaterial = new THREE.MeshPhongMaterial({ map: tableTexture });
 const tableTop = new THREE.Mesh(new THREE.BoxGeometry(12, 0.5, 16), tableMaterial);
 tableTop.position.set(0, -3.5, 0);
 scene.add(tableTop);
@@ -229,9 +280,12 @@ const rightBorder = new THREE.Mesh(new THREE.BoxGeometry(borderThickness, 7, 1),
 rightBorder.position.set(4.25, 0.75, 0);
 scene.add(rightBorder);
 
+const redDiskMaterialTexture = textureLoader.load('./Skybox/reddisks.jpg')
+const yellowDiskMaterialTexture = textureLoader.load('./Skybox/yellowdisks.jpg')
+
 const diskGeometry = new THREE.CylinderGeometry(0.5, 0.5, 0.35, 32);
-const redDiskMaterial = new THREE.MeshPhongMaterial({ color: 0xff0000 });
-const yellowDiskMaterial = new THREE.MeshPhongMaterial({ color: 0xffff00 });
+const redDiskMaterial = new THREE.MeshPhongMaterial({ map: redDiskMaterialTexture });
+const yellowDiskMaterial = new THREE.MeshPhongMaterial({ map: yellowDiskMaterialTexture });
 
 let currentPlayer = 1;
 let highlightDisk;
