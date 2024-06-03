@@ -7,6 +7,41 @@
     <style>
         body { margin: 0; overflow: hidden; font-family: 'Comic Sans MS', cursive, sans-serif; background-color: #f0f0f0; }
         canvas { display: block; width: 100%; height: 100%; }
+
+        #welcomeScreen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        #welcomeScreen h1 {
+            margin: 0 0 20px 0;
+            font-size: 36px;
+            color: #333;
+        }
+        #welcomeScreen button {
+            display: block;
+            margin: 10px auto;
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        #welcomeScreen button:hover {
+            background-color: #0056b3;
+        }
+
+
         #menu {
             position: absolute;
             top: 50%;
@@ -37,6 +72,21 @@
             transition: background-color 0.3s ease;
         }
         #menu button:hover {
+            background-color: #0056b3;
+        }
+        #menu button, #winnerMessage button {
+            display: block;
+            margin: 10px auto;
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        #menu button:hover, #winnerMessage button:hover {
             background-color: #0056b3;
         }
         #resetButton {
@@ -133,15 +183,62 @@
         #manual button:hover {
             background-color: #0056b3;
         }
+
+        #nameInputContainer {
+    background-color: #f7f7f7;
+    border: 2px solid #007BFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#nameInputContainer input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+#nameInputContainer button {
+    width: 40%;
+    padding: 10px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#nameInputContainer button:hover {
+    background-color: #0056b3;
+}
     </style>
 </head>
 <body>
+
+    <div id="welcomeScreen">
+        <h1>Bem vindo ao 4 Em Linha</h1>
+        <button id="enterGameButton">Começar</button>
+    </div>
     <div id="menu">
         <h1>4 em Linha</h1>
-        <button id="startGameButton">Iniciar Jogo</button>
-        <button id="resetGameButton" style="display: none;">Reiniciar Jogo</button>
-        <button id="showManualButton">Mostrar Manual</button>
+        <button id="startGameButton">Iniciar o Jogo</button>
+        <button id="resetGameButton" style="display: none;">Reiniciar o Jogo</button>
+        <button id="showManualButton">Mostrar o Manual</button>
         <button id="exitButton">Fechar o Jogo</button>
+        
+
     </div>
     <div id="manual">
         <h2>Aprende que eu nao duro sempre, sigaa</h2>
@@ -163,16 +260,29 @@
     <div id="winnerMessage">
         <div id="winnerText"></div>
         <img id="victoryImage" src="./Imagens/zeca.png" alt="Vitória!" style="display: none; width: 200px; height: 200px; margin: 0 auto;">
+        <button id="returnToMenuButton">Voltar ao Menu</button>
     </div>
+
     <div id="loadingScreen">
         <div>Carregando...</div>
         <div id="tip"></div>
     </div>
-    <audio id="backgroundMusic" src="./Sounds/Yu-Gi-Oh! Duel Links - Alito Theme.mp3" loop></audio>
+    
+<div id="nameInputContainer" style="display: none;">
+    <h2>Como voçês se chamam?</h2>
+    <input type="text" id="player1NameInput" placeholder="Nome do Jogador 1 (Vermelho)">
+    <input type="text" id="player2NameInput" placeholder="Nome do Jogador 2 (Amarelo)">
+    <button id="startButton">Iniciar</button>
+    <button id="cancelButton">Cancelar</button>
+</div>
+
+    <audio id="backgroundMusic" src="./Sounds/Hope Hospital (Routine  Map Screen 1) - Trauma Center_ Under the Knife Music (Extended).mp3" loop></audio>
     <audio id="victorySound" src="./Sounds/victory-cloud-super-smash-bros-ultimate-music-101soundboards.mp3"></audio>
+    <audio id="menuMusic" src="./Sounds/Virtual Sonic - City in the Clouds.mp3" loop></audio>
     <script type="module" src="app.js"></script>
 </body>
 </html>
+
 
 
 

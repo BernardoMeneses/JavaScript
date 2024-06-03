@@ -7,8 +7,9 @@ import { createSofa } from './Objetos/sofa.js'
 import { createQuadroGroup, addQuadroGroupToWall } from './Objetos/quadros.js';
 import { createPorta, rotatePortaY } from './Objetos/porta.js';
 import { createPlanta } from './Objetos/planta.js';
-
+import { createGraffiti } from './Objetos/graffiti.js';
 import { createTV } from './Objetos/tv.js';
+import { createCandeeiro } from './Objetos/candeeiro.js';
 
 
 const scene = new THREE.Scene();
@@ -23,11 +24,11 @@ const sofa1 = createSofa();
 sofa1.position.set(16,-5.5, -45 );
 scene.add(sofa1);
 
-const porta = createPorta({ x: 50, y: 0, z: 40 }, './Skybox/mesa.png');
+const porta = createPorta({ x: 50, y: 0, z: 40 }, './Texturas/mesa.png');
 scene.add(porta);
 
 // Adicionando planta à cena ao lado da porta
-const planta = createPlanta({ x: 45, y: -5, z: 0 }, './Skybox/vaso.jpg', './Skybox/planta.jpg');
+const planta = createPlanta({ x: 45, y: -5, z: 0 }, './Texturas/vaso.jpg', './Texturas/planta.jpg');
 scene.add(planta);
 
 const aspect = window.innerWidth / window.innerHeight;
@@ -37,9 +38,8 @@ const frustumSize = 20;
 const dicas = [
     "Dica: Tenta conectar 4 peças da mesma cor!",
     "Dica: O que importa é ter saúde mesmo ganhando ou perdendo",
-    "Dica: Destroi o teu oponente e impede de ele jogar",
-    "Dica: Planeia bem as jogadas se n tás fdd",
-    "Dica: Não sejas mongo, só ataca e rusha nisso crlh",
+    "Dica: Destroi o teu oponente e impede o de jogar",
+    "Dica: Planeia bem as tuas jogadas",
     "Dica: Este jogo tem o selo de aprovação do Zeca, é Zecástico",
     "Dica: Os alunos da UTAD fazem os melhores jogos e gameplays",
     "Dica: Patricionado pela AllSoft e Companhia"
@@ -53,8 +53,9 @@ function getDicaAleatoria() {
 
 // Criação do ambiente da sala de estar
 const textureLoader = new THREE.TextureLoader();
-const wallTexture = textureLoader.load('Skybox/wall.jpg');
-const floorTexture = textureLoader.load('Skybox/floor.jpg');
+const wallTexture = textureLoader.load('Texturas/wall.jpg');
+const floorTexture = textureLoader.load('Texturas/floor.jpg');
+
 
 // Materiais
 const roomMaterial = new THREE.MeshPhongMaterial({ map: wallTexture, side: THREE.DoubleSide });
@@ -70,7 +71,7 @@ floor.position.y = -6.5;
 scene.add(floor);
 
 // Teto
-const ceiling = new THREE.Mesh(floorGeometry, new THREE.MeshPhongMaterial({ color: 0x592C0C }));
+const ceiling = new THREE.Mesh(floorGeometry, new THREE.MeshPhongMaterial({ color: 0xBCBCBC}));
 ceiling.position.y = roomHeight - 6.5;
 ceiling.rotation.x = Math.PI / 2;
 scene.add(ceiling);
@@ -103,8 +104,11 @@ rightWall.rotation.y = -Math.PI / 2;
 scene.add(rightWall);
 
 // Adicionando TV na frontwall no centro mesmo debaixo dos quadros já la existentes
-const tv = createTV({ x: 0, y: -10, z: 0 }, './Skybox/tv.jpg');
+const tv = createTV({ x: 0, y: -10, z: 0 }, './Texturas/tv.jpg');
 frontWall.add(tv);
+
+const graffiti = createGraffiti({ x: 0, y: 2.5, z: 0 }, './Texturas/EASTER.png');
+leftWall.add(graffiti);
 
 const imageUrls = [
     './Imagens/meme1.jpg',
@@ -178,16 +182,25 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 const pointLight = new THREE.PointLight(0xffffff, 1.5, 100);
-pointLight.position.set(0, 30, 30);
+pointLight.position.set(-30, 20, 25);
 scene.add(pointLight);
+
+
+const candeeiro = createCandeeiro(pointLight,'./Texturas/cadeeiro.jpg');
+candeeiro.position.set(-30, 25, 30); // Ajuste a posição do candeeiro
+scene.add(candeeiro);
+
 
 const directionalLight1 = new THREE.DirectionalLight(0xffffff, 0.75);
 directionalLight1.position.set(50, 50, 50);
 scene.add(directionalLight1);
 
+;
+
 const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.5);
 directionalLight2.position.set(-50, 25, -50);
 scene.add(directionalLight2);
+
 
 const fillLight = new THREE.HemisphereLight(0xffffff, 0x404040, 0.5);
 fillLight.position.set(0, 20, 0);
@@ -212,7 +225,7 @@ spotLight2.castShadow = true;
 spotLight2.visible = false;  // Initialize as turned off
 scene.add(spotLight2);
 
-const BoardTexture = textureLoader.load('./SkyBox/tabuleiro.avif')
+const BoardTexture = textureLoader.load('./Texturas/tabuleiro.avif')
 
 const boardMaterial = new THREE.MeshPhongMaterial({map: BoardTexture });
 const sideBoardGeometry = new THREE.BoxGeometry(0.25, 7, 0.75);
@@ -241,14 +254,14 @@ for (let i = -3; i <= 3; i++) {
     }
 }
 
-const plataformTexture = textureLoader.load('./Skybox/plataform.jpg');
+const plataformTexture = textureLoader.load('./Texturas/plataform.jpg');
 
 const platformMaterial = new THREE.MeshPhongMaterial({ map: plataformTexture });
 const platform = new THREE.Mesh(new THREE.BoxGeometry(10, 0.5, 14), platformMaterial);
 platform.position.set(0, -3, 0);
 scene.add(platform);
 
-const tableTexture = textureLoader.load('./Skybox/mesa.png');
+const tableTexture = textureLoader.load('./Texturas/mesa.png');
 
 const tableMaterial = new THREE.MeshPhongMaterial({ map: tableTexture });
 const tableTop = new THREE.Mesh(new THREE.BoxGeometry(12, 0.5, 16), tableMaterial);
@@ -280,8 +293,8 @@ const rightBorder = new THREE.Mesh(new THREE.BoxGeometry(borderThickness, 7, 1),
 rightBorder.position.set(4.25, 0.75, 0);
 scene.add(rightBorder);
 
-const redDiskMaterialTexture = textureLoader.load('./Skybox/reddisks.jpg')
-const yellowDiskMaterialTexture = textureLoader.load('./Skybox/yellowdisks.jpg')
+const redDiskMaterialTexture = textureLoader.load('./Texturas/reddisks.jpg')
+const yellowDiskMaterialTexture = textureLoader.load('./Texturas/yellowdisks.jpg')
 
 const diskGeometry = new THREE.CylinderGeometry(0.5, 0.5, 0.35, 32);
 const redDiskMaterial = new THREE.MeshPhongMaterial({ map: redDiskMaterialTexture });
@@ -436,6 +449,9 @@ function resetGame() {
     // Se houver movimento de keybinds configurado, remova-o
     if (removeMovementKeybinds) removeMovementKeybinds();
     removeMovementKeybinds = setupMovementKeybinds(highlightDisk, addDisc, () => gameOver);
+
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    backgroundMusic.play();
 }
 
 function showMenu() {
@@ -453,6 +469,7 @@ setupLightKeybinds(pointLight, directionalLight1, directionalLight2, fillLight, 
 
 // Configurar keybinds para menu
 setupMenuKeybinds(showMenu);
+
 
 // Criação dos controles da câmera
 const controls = new OrbitControls(dynamicCamera, renderer.domElement);
@@ -488,23 +505,49 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-// Mostrar a tela de carregamento ao iniciar o jogo
-function showLoadingScreen() {
-    const loadingScreen = document.getElementById('loadingScreen');
-    const tipElement = document.getElementById('tip');
-    tipElement.innerHTML = getDicaAleatoria().replace(/\n/g, '<br>');
-    loadingScreen.style.display = 'flex';
-    setTimeout(() => {
-        loadingScreen.style.display = 'none';
-    }, 5000);
-}
 
-showLoadingScreen();
+
 
 // Menu logic
+// Menu logic
+
+document.addEventListener('DOMContentLoaded', () => {
+    const loadingScreen = document.getElementById('loadingScreen');
+    const welcomeScreen = document.getElementById('welcomeScreen');
+    const enterGameButton = document.getElementById('enterGameButton');
+    const menuMusic = document.getElementById('menuMusic');
+
+    // Função para exibir a tela de carregamento com as dicas
+    function showLoadingScreen() {
+        const tipElement = document.getElementById('tip');
+        tipElement.innerHTML = getDicaAleatoria().replace(/\n/g, '<br>');
+        loadingScreen.style.display = 'flex';
+
+        setTimeout(() => {
+            loadingScreen.style.display = 'none';
+            document.getElementById('menu').style.display = 'block';
+            menuMusic.play();
+        }, 4000); // Duração da tela de carregamento
+    }
+
+    // Iniciar a música do menu após a interação do usuário
+    enterGameButton.addEventListener('click', () => {
+        welcomeScreen.style.display = 'none';
+        showLoadingScreen();
+    });
+});
+
 document.getElementById('startGameButton').addEventListener('click', () => {
-    player1Name = prompt('Digite o nome do Jogador 1 (Vermelho):');
-    player2Name = prompt('Digite o nome do Jogador 2 (Amarelo):');
+    document.getElementById('nameInputContainer').style.display = 'block';
+    document.getElementById('menu').style.display = 'none';
+    const menuMusic = document.getElementById('menuMusic');
+    menuMusic.pause();
+});
+
+document.getElementById('startButton').addEventListener('click', () => {
+    player1Name = document.getElementById('player1NameInput').value;
+    player2Name = document.getElementById('player2NameInput').value;
+    document.getElementById('nameInputContainer').style.display = 'none';
     hideMenu();
     resetGame();
     const backgroundMusic = document.getElementById('backgroundMusic');
@@ -512,15 +555,40 @@ document.getElementById('startGameButton').addEventListener('click', () => {
     backgroundMusic.volume = 0.5; // Ajustar o volume se necessário
 });
 
+document.getElementById('cancelButton').addEventListener('click', () => {
+    document.getElementById('nameInputContainer').style.display = 'none';
+    document.getElementById('menu').style.display = 'block';
+    const menuMusic = document.getElementById('menuMusic');
+    menuMusic.play();
+});
+
 document.getElementById('resetGameButton').addEventListener('click', () => {
     resetGame();
     hideMenu();
+    const menuMusic = document.getElementById('menuMusic');
+    menuMusic.pause();
 });
-
 
 document.getElementById('exitButton').addEventListener('click', () => {
     window.close();
 });
+
+document.getElementById('returnToMenuButton').addEventListener('click', () => {
+    document.getElementById('winnerMessage').style.display = 'none';
+    document.getElementById('victoryImage').style.display = 'none';
+    showMenu();
+
+    // Parar a música de vitória
+    const victorySound = document.getElementById('victorySound');
+    victorySound.pause();
+    victorySound.currentTime = 0; 
+
+    // Tocar a música do menu
+    const menuMusic = document.getElementById('menuMusic');
+    menuMusic.play();
+});
+
+
 
 document.getElementById('showManualButton').addEventListener('click', () => {
     document.getElementById('manual').style.display = 'block';
@@ -529,6 +597,8 @@ document.getElementById('showManualButton').addEventListener('click', () => {
 document.getElementById('closeManualButton').addEventListener('click', () => {
     document.getElementById('manual').style.display = 'none';
 });
+
+
 
 
 
